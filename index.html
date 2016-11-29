@@ -37,8 +37,8 @@
       </span>
     </div>
     <div class="nav-item">
-      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Docs"  >
-        <img src="" alt="Nova" class="logo"/><img src="" class="logo-subbrand" alt="Docs"/>
+      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation Nova Documentation"  >
+        Nova Documentation
       </a>
     </div>
   </div>
@@ -65,8 +65,8 @@
 <div class="sidebar">
   <div class="panel">
     <div class="panel-item">
-      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova"  >
-        <span>Nova Docs</span>
+      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation"  >
+        <span>Nova Documentation Nova Documentation</span>
       </a>
     </div>
     
@@ -105,6 +105,15 @@
                 </a>
               </li>
             
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Overview</div>
+          
+          <ul class="list-toc">
+            
               
               <li class="item-toc ">
                 <a href="features.html" class="sidebar-link ">
@@ -116,6 +125,29 @@
               <li class="item-toc ">
                 <a href="architecture.html" class="sidebar-link ">
                   <span>Architecture</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">API</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="theming.html" class="sidebar-link ">
+                  <span>Components & Theming</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="custom-fields.html" class="sidebar-link ">
+                  <span>Custom Fields</span>
                 </a>
               </li>
             
@@ -151,13 +183,6 @@
               <li class="item-toc ">
                 <a href="email.html" class="sidebar-link ">
                   <span>Email</span>
-                </a>
-              </li>
-            
-              
-              <li class="item-toc ">
-                <a href="theming.html" class="sidebar-link ">
-                  <span>Theming</span>
                 </a>
               </li>
             
@@ -227,52 +252,21 @@
     </div>
 
     <div class="document-formatting">
-      <p>Some background:</p>
-<ul>
-<li><strong>Telescope</strong> was originally launched as a pure-Meteor Reddit clone.</li>
-<li>In early 2016, a new React-based version codenamed <strong>Nova</strong> was created. </li>
-<li>In late 2016, Nova’s data layer was ported to <a href="http://apollostack.com" target="_blank" rel="external">Apollo</a>.</li>
-</ul>
-<p>This is a <strong>clean</strong> implementation of this Apollo version, in the sense that only core features are presented here. </p>
-<p>You can view this codebase as underlying the development framework that supports all other Nova features such as posts, comments, etc.</p>
-<p>You can use this framework to <strong>develop any type of Apollo-powered Meteor &amp; React app</strong>.</p>
-<h3 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h3><p>Clone this repo locally, then:</p>
+      <h3 id="What’s-Nova"><a href="#What’s-Nova" class="headerlink" title="What’s Nova?"></a>What’s Nova?</h3><p>Nova is a framework that gives you a set of tools for quickly building React-based web applications. Out of the box, it can handle data loading, automatically generate forms, handle email notifications, and much more. </p>
+<p>You can get a good overview of what Nova can do in the <a href="features.html">Features</a> section. </p>
+<h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><p>Clone this repo locally, then:</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br><span class="line">meteor</span><br></pre></td></tr></table></figure>
-<p>And open <code>http://localhost:3000/movies</code> in your browser.</p>
+<p>And open <code>http://localhost:3000/</code> in your browser.</p>
 <p>You can then take a look at <a href="https://github.com/TelescopeJS/Telescope/tree/apollo-clean/packages/movies-demo/lib" target="_blank" rel="external">the code for the <code>movies-demo</code> package</a> to understand how Nova works. </p>
-<h3 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h3><p>Core Nova features include:</p>
-<h4 id="GraphQL-Schema-Generation"><a href="#GraphQL-Schema-Generation" class="headerlink" title="GraphQL Schema Generation"></a>GraphQL Schema Generation</h4><p>Nova will automatically generate GraphQL schemas for your collections based on their <a href="https://github.com/aldeed/meteor-simple-schema" target="_blank" rel="external">SimpleSchema</a> JSON schema. </p>
-<p>This prevents you from having to specify your schema twice in two different formats. Although please note that this feature is completely optional, and that you can also specify your schema manually if you prefer. </p>
-<h4 id="Automated-Forms"><a href="#Automated-Forms" class="headerlink" title="Automated Forms"></a>Automated Forms</h4><p>Nova will also use your schema to generate client-side forms and handle their submission via the appropriate Apollo mutation. </p>
-<p><img src="http://g.recordit.co/FcZuDIo8Rw.gif" alt="http://g.recordit.co/FcZuDIo8Rw.gif"></p>
-<p>For example, here’s how you would display a form to edit a single movie:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;NovaForm </span><br><span class="line">  collection=&#123;Movies&#125; </span><br><span class="line">  documentId=&#123;props.documentId&#125;</span><br><span class="line">  queryName=<span class="string">"moviesListQuery"</span></span><br><span class="line">  showRemove=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-<p>The <code>queryName</code> option tells NovaForm which query should be automatically updated once the operation is done, while the <code>showRemove</code> option add a “Delete Movie” button to the form. </p>
-<p>Note that NovaForm will also take care of loading the document to edit, if it’s not already loaded in the client store. </p>
-<h4 id="Easy-Data-Loading"><a href="#Easy-Data-Loading" class="headerlink" title="Easy Data Loading"></a>Easy Data Loading</h4><p>Nova features a set of data loading helpers to make loading Apollo data easier, <code>withList</code> (to load a list of documents) and <code>withSingle</code> (to load a single document). </p>
-<p>For example, here’s how you would use <code>withList</code> to pass a <code>results</code> prop containing all movies to your <code>MoviesList</code> component:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> listOptions = &#123;</span><br><span class="line">  <span class="attr">collection</span>: Movies,</span><br><span class="line">  <span class="attr">queryName</span>: <span class="string">'moviesListQuery'</span>,</span><br><span class="line">  <span class="attr">fragmentName</span>: <span class="string">'myFragment'</span>,</span><br><span class="line">  <span class="attr">fragment</span>: fragment,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withList(listOptions)(MoviesList);</span><br></pre></td></tr></table></figure>
-<p>You can pass a fragment to control what data is loaded for each document.</p>
-<h4 id="Schema-based-Security-amp-Validation"><a href="#Schema-based-Security-amp-Validation" class="headerlink" title="Schema-based Security &amp; Validation"></a>Schema-based Security &amp; Validation</h4><p>All of Nova’s security and validation is based on your collection’s schema. For each field of your schema, you can define the following functions:</p>
-<ul>
-<li><code>viewableIf</code></li>
-<li><code>insertableIf</code></li>
-<li><code>editableIf</code></li>
-</ul>
-<p>They all take the current user as argument (and optionally the document being affected) and check if the user can perform the given action. </p>
-<h4 id="Groups-amp-Permissions"><a href="#Groups-amp-Permissions" class="headerlink" title="Groups &amp; Permissions"></a>Groups &amp; Permissions</h4><p>Nova features a simple system to handle user groups and permissions. For example, here’s how you would define that all users can create new movies and edit/remove their own, but only admins can edit or remove other user’s movies:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> defaultActions = [</span><br><span class="line">  <span class="string">"movies.new"</span>,</span><br><span class="line">  <span class="string">"movies.edit.own"</span>,</span><br><span class="line">  <span class="string">"movies.remove.own"</span>,</span><br><span class="line">];</span><br><span class="line">Users.groups.default.can(defaultActions);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> adminActions = [</span><br><span class="line">  <span class="string">"movies.edit.all"</span>,</span><br><span class="line">  <span class="string">"movies.remove.all"</span></span><br><span class="line">];</span><br><span class="line">Users.groups.admins.can(adminActions);</span><br></pre></td></tr></table></figure>
-<p>You can then reference these actions in your mutation checks. </p>
-<h4 id="Other-Features"><a href="#Other-Features" class="headerlink" title="Other Features"></a>Other Features</h4><p>Out of the box, Nova also includes many other time-saving features, such as:</p>
-<ul>
-<li>Internationalization</li>
-<li>Server-side rendering</li>
-<li>Utilities for theming and extending components</li>
-<li>Email and email templates handling</li>
-<li>Preset boilerplate mutations</li>
-</ul>
-<p>And of course, using Nova also means you get access to all the non-core Nova packages, such as <code>nova:posts</code>, <code>nova:comments</code>, <code>nova:newsletter</code>, <code>nova:search</code> etc.</p>
-<h3 id="Next-Steps"><a href="#Next-Steps" class="headerlink" title="Next Steps"></a>Next Steps</h3><p>We’re looking for contributors! If you’re interested in this project, come say hello in the <a href="http://slack.telescopeapp.org" target="_blank" rel="external">Nova Slack chatroom</a>.</p>
+<h3 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h3><p>There are two main ways of using Nova: you can use the features it provides out of the box such as posts, comments, a newsletter, and so on. Or, you can use the underlying <em>framework</em> that powers all these features. </p>
+<p>In either case, you should start by reading the <a href="architecture.html">Architecture</a> section to understand how Nova’s codebase is organized. </p>
+<p>Once you’ve done that, depending on which path you’re interested in you can refer to either one of these two tutorials:</p>
+<ol>
+<li><a href="tutorial-customizing.html">Customizing &amp; Extending Nova</a> will take you through the code of the included <code>customization-demo</code> package and show you how to adapt Nova to your needs by tweaking styles, overriding components, and inserting your own logic in Nova’s back-end. </li>
+<li><a href="tutorial-framework.html">Understanding the Nova Framework</a> on the other hand will teach you how to use Nova’s core data management features to display a list of movies, complete with pagination and a data insertion form. </li>
+</ol>
+<p>If you’re not sure which one is for you, I recommend starting with the first tutorial, as the second one covers more advanced concepts.</p>
+<h3 id="Contribute"><a href="#Contribute" class="headerlink" title="Contribute"></a>Contribute</h3><p>We’re looking for contributors! If you’re interested in this project, come say hello in the <a href="http://slack.telescopeapp.org" target="_blank" rel="external">Nova Slack chatroom</a>.</p>
 
     </div>
   </div>
@@ -305,38 +299,8 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
 
-    <!-- Feedbacklite widget -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  	<script type="text/javascript">
-    	var h = document.getElementsByTagName('head')[0];
-    	(function(){
-    	var fc = document.createElement('link'); fc.type = 'text/css'; fc.rel = 'stylesheet';
-    	fc.href = 'https://product.feedbacklite.com/feedbacklite.css'; h.appendChild(fc);
-    	})();
-    	var fbl = {'campaign':{'id':1875, 'type':2, 'size':1, 'body':'666666', 'position':7, 'tab':4, 'control':1, 'auto':1, 'auto_delay':20000, 'auto_expiry':1209600000}};
-    	(function(){
-    	var fj = document.createElement('script'); fj.type = 'text/javascript';
-    	fj.async = true; fj.src = 'https://product.feedbacklite.com/feedbacklite.js'; h.appendChild(fj);
-    	})();
-  	</script>
 
     <script>
-      // nectar ninja
-      (function(){
-        var handle = '@meteorjs';
-        var a = document.createElement('script');
-        var m = document.getElementsByTagName('script')[0];
-        a.async = 1;
-        a.src = 'https://nectar.ninja/api/v1/' + handle.slice(1);
-        m.parentNode.insertBefore(a, m);
-      })();
-
-     
-      
-
-      // search box
-      
-
       
     </script>
   </body>

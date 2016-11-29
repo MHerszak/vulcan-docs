@@ -37,8 +37,8 @@
       </span>
     </div>
     <div class="nav-item">
-      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Docs"  >
-        <img src="" alt="Nova" class="logo"/><img src="" class="logo-subbrand" alt="Docs"/>
+      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation Nova Documentation"  >
+        Nova Documentation
       </a>
     </div>
   </div>
@@ -65,8 +65,8 @@
 <div class="sidebar">
   <div class="panel">
     <div class="panel-item">
-      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova"  >
-        <span>Nova Docs</span>
+      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation"  >
+        <span>Nova Documentation Nova Documentation</span>
       </a>
     </div>
     
@@ -105,6 +105,15 @@
                 </a>
               </li>
             
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Overview</div>
+          
+          <ul class="list-toc">
+            
               
               <li class="item-toc ">
                 <a href="features.html" class="sidebar-link ">
@@ -116,6 +125,29 @@
               <li class="item-toc ">
                 <a href="architecture.html" class="sidebar-link ">
                   <span>Architecture</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">API</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="theming.html" class="sidebar-link ">
+                  <span>Components & Theming</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="custom-fields.html" class="sidebar-link ">
+                  <span>Custom Fields</span>
                 </a>
               </li>
             
@@ -151,13 +183,6 @@
               <li class="item-toc ">
                 <a href="email.html" class="sidebar-link ">
                   <span>Email</span>
-                </a>
-              </li>
-            
-              
-              <li class="item-toc ">
-                <a href="theming.html" class="sidebar-link ">
-                  <span>Theming</span>
                 </a>
               </li>
             
@@ -246,25 +271,13 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;NovaForm </span><br><span class="line">  collection=&#123;Posts&#125;</span><br><span class="line">  <span class="built_in">document</span>=&#123;post&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h3><h4 id="collection"><a href="#collection" class="headerlink" title="collection"></a><code>collection</code></h4><p>The collection in which to edit or insert a document.</p>
 <h4 id="schema"><a href="#schema" class="headerlink" title="schema"></a><code>schema</code></h4><p>If you prefer, you can also specify a schema instead of a collection.</p>
-<h4 id="document"><a href="#document" class="headerlink" title="document"></a><code>document</code></h4><p>If present, the document to edit. If not present, the form will be a “new document” form. </p>
+<h4 id="documentId"><a href="#documentId" class="headerlink" title="documentId"></a><code>documentId</code></h4><p>If present, the document to edit. If not present, the form will be a “new document” form. </p>
 <h4 id="submitCallback-data"><a href="#submitCallback-data" class="headerlink" title="submitCallback(data)"></a><code>submitCallback(data)</code></h4><p>A callback called on form submission on the form data. Should return the <code>data</code> object as well.</p>
 <h4 id="successCallback-document"><a href="#successCallback-document" class="headerlink" title="successCallback(document)"></a><code>successCallback(document)</code></h4><p>A callback called on method success.</p>
 <h4 id="errorCallback-document-error"><a href="#errorCallback-document-error" class="headerlink" title="errorCallback(document, error)"></a><code>errorCallback(document, error)</code></h4><p>A callback called on method failure.</p>
 <h4 id="cancelCallback"><a href="#cancelCallback" class="headerlink" title="cancelCallback()"></a><code>cancelCallback()</code></h4><p>If provided, will show a “cancel” link next to the form’s submit button. </p>
 <h4 id="labelFunction"><a href="#labelFunction" class="headerlink" title="labelFunction"></a><code>labelFunction</code></h4><p>A function to call on field names to get the label.</p>
 <h4 id="prefilledProps"><a href="#prefilledProps" class="headerlink" title="prefilledProps"></a><code>prefilledProps</code></h4><p>A set of props to prefill for new documents. </p>
-<h3 id="Collection-Schema"><a href="#Collection-Schema" class="headerlink" title="Collection Schema"></a>Collection Schema</h3><p>This package generates forms based on the following special schema properties (see also the <a href="https://github.com/meteor-utilities/smart-methods" target="_blank" rel="external">Smart Methods</a> package:</p>
-<h4 id="insertableIf-user"><a href="#insertableIf-user" class="headerlink" title="insertableIf(user)"></a><code>insertableIf(user)</code></h4><p>A function called on the <code>user</code> performing the operation, should return <code>true</code> or <code>false</code>. When generating a form for inserting new documents, the form will contain all the fields that return <code>true</code> for the current user. </p>
-<h4 id="editableIf-user-document"><a href="#editableIf-user-document" class="headerlink" title="editableIf(user, document)"></a><code>editableIf(user, document)</code></h4><p>Called on the <code>user</code> performing the operation, and the <code>document</code> being operated on, and should return <code>true</code> or <code>false</code>. When generating a form for editing existing documents, the form will contain all the fields that return <code>true</code> for the current user. </p>
-<h4 id="control"><a href="#control" class="headerlink" title="control"></a><code>control</code></h4><p>Either a text string (one of <code>text</code>, <code>textarea</code>, <code>checkbox</code>, <code>checkboxgroup</code>, <code>radiogroup</code>, or <code>select</code>) or a React component. </p>
-<h4 id="order"><a href="#order" class="headerlink" title="order"></a><code>order</code></h4><p>A number corresponding to the position of the property’s field inside the form. </p>
-<h4 id="group"><a href="#group" class="headerlink" title="group"></a><code>group</code></h4><p>An optional object containing the group/section/fieldset in which to include the form element. Groups have <code>name</code>, <code>label</code>, and <code>order</code> properties.</p>
-<p>For example:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">postedAt: &#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="built_in">Date</span>,</span><br><span class="line">  <span class="attr">optional</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">insertableIf</span>: Users.isAdmin,</span><br><span class="line">  <span class="attr">editableIf</span>: Users.isAdmin,</span><br><span class="line">  <span class="attr">publish</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">control</span>: <span class="string">"datetime"</span>,</span><br><span class="line">  <span class="attr">group</span>: &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">"admin"</span>,</span><br><span class="line">    <span class="attr">label</span>: <span class="string">"Admin Options"</span>,</span><br><span class="line">    <span class="attr">order</span>: <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>Note that fields with no groups are always rendered first in the form. </p>
-<h4 id="placeholder"><a href="#placeholder" class="headerlink" title="placeholder"></a><code>placeholder</code></h4><p>A placeholder value for the form field. </p>
-<h4 id="beforeComponent"><a href="#beforeComponent" class="headerlink" title="beforeComponent"></a><code>beforeComponent</code></h4><p>A React component that will be inserted just before the form component itself.</p>
-<h4 id="afterComponent"><a href="#afterComponent" class="headerlink" title="afterComponent"></a><code>afterComponent</code></h4><p>A React component that will be inserted just after the form component itself.</p>
 <h3 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h3><p>The main <code>NovaForm</code> components makes the following objects available as context to all its children:</p>
 <h4 id="autofilledValues"><a href="#autofilledValues" class="headerlink" title="autofilledValues"></a><code>autofilledValues</code></h4><p>An object containing optional autofilled properties. </p>
 <h4 id="addToAutofilledValues-name-value"><a href="#addToAutofilledValues-name-value" class="headerlink" title="addToAutofilledValues({name: value})"></a><code>addToAutofilledValues({name: value})</code></h4><p>A function that takes a property, and adds it to the <code>autofilledValues</code> object. </p>
@@ -318,38 +331,8 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
 
-    <!-- Feedbacklite widget -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  	<script type="text/javascript">
-    	var h = document.getElementsByTagName('head')[0];
-    	(function(){
-    	var fc = document.createElement('link'); fc.type = 'text/css'; fc.rel = 'stylesheet';
-    	fc.href = 'https://product.feedbacklite.com/feedbacklite.css'; h.appendChild(fc);
-    	})();
-    	var fbl = {'campaign':{'id':1875, 'type':2, 'size':1, 'body':'666666', 'position':7, 'tab':4, 'control':1, 'auto':1, 'auto_delay':20000, 'auto_expiry':1209600000}};
-    	(function(){
-    	var fj = document.createElement('script'); fj.type = 'text/javascript';
-    	fj.async = true; fj.src = 'https://product.feedbacklite.com/feedbacklite.js'; h.appendChild(fj);
-    	})();
-  	</script>
 
     <script>
-      // nectar ninja
-      (function(){
-        var handle = '@meteorjs';
-        var a = document.createElement('script');
-        var m = document.getElementsByTagName('script')[0];
-        a.async = 1;
-        a.src = 'https://nectar.ninja/api/v1/' + handle.slice(1);
-        m.parentNode.insertBefore(a, m);
-      })();
-
-     
-      
-
-      // search box
-      
-
       
     </script>
   </body>

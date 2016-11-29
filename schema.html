@@ -37,8 +37,8 @@
       </span>
     </div>
     <div class="nav-item">
-      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Docs"  >
-        <img src="" alt="Nova" class="logo"/><img src="" class="logo-subbrand" alt="Docs"/>
+      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation Nova Documentation"  >
+        Nova Documentation
       </a>
     </div>
   </div>
@@ -65,8 +65,8 @@
 <div class="sidebar">
   <div class="panel">
     <div class="panel-item">
-      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova"  >
-        <span>Nova Docs</span>
+      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation"  >
+        <span>Nova Documentation Nova Documentation</span>
       </a>
     </div>
     
@@ -105,6 +105,15 @@
                 </a>
               </li>
             
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Overview</div>
+          
+          <ul class="list-toc">
+            
               
               <li class="item-toc ">
                 <a href="features.html" class="sidebar-link ">
@@ -116,6 +125,29 @@
               <li class="item-toc ">
                 <a href="architecture.html" class="sidebar-link ">
                   <span>Architecture</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">API</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="theming.html" class="sidebar-link ">
+                  <span>Components & Theming</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="custom-fields.html" class="sidebar-link ">
+                  <span>Custom Fields</span>
                 </a>
               </li>
             
@@ -151,13 +183,6 @@
               <li class="item-toc ">
                 <a href="email.html" class="sidebar-link ">
                   <span>Email</span>
-                </a>
-              </li>
-            
-              
-              <li class="item-toc ">
-                <a href="theming.html" class="sidebar-link ">
-                  <span>Theming</span>
                 </a>
               </li>
             
@@ -227,17 +252,23 @@
     </div>
 
     <div class="document-formatting">
-      <h2 id="custom-fields">Custom Fields</h2>
-
-<p>Out of the box, Nova has three main collections: <code>Posts</code>, <code>Users</code>, and <code>Comments</code>. Each of them has a pre-set schema, but that schema can also be extended with custom fields.</p>
-<p>For example, this is how the <code>nova:newsletter</code> package extends the <code>Posts</code> schema with a <code>scheduledAt</code> property that keeps track of when a post was sent out as part of an email newsletter:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Posts.addField(&#123;</span><br><span class="line">  <span class="attr">fieldName</span>: <span class="string">'scheduledAt'</span>,</span><br><span class="line">  <span class="attr">fieldSchema</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">Date</span>,</span><br><span class="line">    <span class="attr">optional</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>The <code>collection.addField()</code> function takes either a field object, or an array of fields. Each field has a <code>fieldName</code> property, and a <code>fieldSchema</code> property.</p>
-<p>Each field schema supports all of the <a href="https://github.com/aldeed/meteor-simple-schema#schema-rules" target="_blank" rel="external">SimpleSchema properties</a>, such as <code>type</code>, <code>optional</code>, etc.</p>
-<p>A few special properties (<code>insertableIf</code>, <code>editableIf</code>, <code>control</code>, and <code>order</code>) are also supported by the <a href="https://github.com/TelescopeJS/Telescope/tree/nova/packages/nova-forms" target="_blank" rel="external">nova:forms</a> package.</p>
-<p>Additionally, the <code>publish</code> and <code>join</code> properties come from the <a href="https://github.com/meteor-utilities/smart-publications" target="_blank" rel="external">Smart Publications</a> package. Setting <code>publish</code> to true indicates that a field should be published to the client (see also next section).</p>
-<p>You can also remove a field by calling <code>collection.removeField(fieldName)</code>. For example:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Posts.removeField(<span class="string">'scheduledAt'</span>);</span><br></pre></td></tr></table></figure>
+      <h2 id="Default-Properties"><a href="#Default-Properties" class="headerlink" title="Default Properties"></a>Default Properties</h2><p>See the <a href="https://github.com/aldeed/meteor-simple-schema#schema-rules" target="_blank" rel="external">SimpleSchema documentation</a>.</p>
+<h2 id="Data-Layer-Properties"><a href="#Data-Layer-Properties" class="headerlink" title="Data Layer Properties"></a>Data Layer Properties</h2><h4 id="viewableIf"><a href="#viewableIf" class="headerlink" title="viewableIf"></a><code>viewableIf</code></h4><p>Can either be an array of group names or a function.</p>
+<p>If it’s a function, it’ll be called on the <code>user</code> viewing the document, and should return <code>true</code> or <code>false</code>. When generating a form for inserting new documents, the form will contain all the fields that return <code>true</code> for the current user. </p>
+<h4 id="insertableIf"><a href="#insertableIf" class="headerlink" title="insertableIf"></a><code>insertableIf</code></h4><p>Can either be an array of group names or a function.</p>
+<p>If it’s a function, it’ll be called on the <code>user</code> performing the operation, and should return <code>true</code> or <code>false</code>. When generating a form for inserting new documents, the form will contain all the fields that return <code>true</code> for the current user. </p>
+<h4 id="editableIf"><a href="#editableIf" class="headerlink" title="editableIf"></a><code>editableIf</code></h4><p>Can either be an array of group names or a function.</p>
+<p>If it’s a function, it’ll be called on the <code>user</code> performing the operation, and the <code>document</code> being operated on, and should return <code>true</code> or <code>false</code>. When generating a form for editing existing documents, the form will contain all the fields that return <code>true</code> for the current user. </p>
+<h2 id="Forms-Properties"><a href="#Forms-Properties" class="headerlink" title="Forms Properties"></a>Forms Properties</h2><h4 id="label"><a href="#label" class="headerlink" title="label"></a><code>label</code></h4><p>The form label. If not provided, the label will be generated based on the field name and the available language strings data. </p>
+<h4 id="control"><a href="#control" class="headerlink" title="control"></a><code>control</code></h4><p>Either a text string (one of <code>text</code>, <code>textarea</code>, <code>checkbox</code>, <code>checkboxgroup</code>, <code>radiogroup</code>, or <code>select</code>) or a React component. </p>
+<h4 id="order"><a href="#order" class="headerlink" title="order"></a><code>order</code></h4><p>A number corresponding to the position of the property’s field inside the form. </p>
+<h4 id="group"><a href="#group" class="headerlink" title="group"></a><code>group</code></h4><p>An optional object containing the group/section/fieldset in which to include the form element. Groups have <code>name</code>, <code>label</code>, and <code>order</code> properties.</p>
+<p>For example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">postedAt: &#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="built_in">Date</span>,</span><br><span class="line">  <span class="attr">optional</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">insertableIf</span>: Users.isAdmin,</span><br><span class="line">  <span class="attr">editableIf</span>: Users.isAdmin,</span><br><span class="line">  <span class="attr">publish</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">control</span>: <span class="string">"datetime"</span>,</span><br><span class="line">  <span class="attr">group</span>: &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">"admin"</span>,</span><br><span class="line">    <span class="attr">label</span>: <span class="string">"Admin Options"</span>,</span><br><span class="line">    <span class="attr">order</span>: <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>Note that fields with no groups are always rendered first in the form. </p>
+<h4 id="placeholder"><a href="#placeholder" class="headerlink" title="placeholder"></a><code>placeholder</code></h4><p>A placeholder value for the form field. </p>
+<h4 id="beforeComponent"><a href="#beforeComponent" class="headerlink" title="beforeComponent"></a><code>beforeComponent</code></h4><p>A React component that will be inserted just before the form component itself.</p>
+<h4 id="afterComponent"><a href="#afterComponent" class="headerlink" title="afterComponent"></a><code>afterComponent</code></h4><p>A React component that will be inserted just after the form component itself.</p>
 
     </div>
   </div>
@@ -247,10 +278,10 @@
       
       
         <a class="link primary prev"
-          href="architecture.html">
+          href="custom-fields.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Architecture
+          Custom Fields
         </a>
       
       
@@ -277,38 +308,8 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
 
-    <!-- Feedbacklite widget -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  	<script type="text/javascript">
-    	var h = document.getElementsByTagName('head')[0];
-    	(function(){
-    	var fc = document.createElement('link'); fc.type = 'text/css'; fc.rel = 'stylesheet';
-    	fc.href = 'https://product.feedbacklite.com/feedbacklite.css'; h.appendChild(fc);
-    	})();
-    	var fbl = {'campaign':{'id':1875, 'type':2, 'size':1, 'body':'666666', 'position':7, 'tab':4, 'control':1, 'auto':1, 'auto_delay':20000, 'auto_expiry':1209600000}};
-    	(function(){
-    	var fj = document.createElement('script'); fj.type = 'text/javascript';
-    	fj.async = true; fj.src = 'https://product.feedbacklite.com/feedbacklite.js'; h.appendChild(fj);
-    	})();
-  	</script>
 
     <script>
-      // nectar ninja
-      (function(){
-        var handle = '@meteorjs';
-        var a = document.createElement('script');
-        var m = document.getElementsByTagName('script')[0];
-        a.async = 1;
-        a.src = 'https://nectar.ninja/api/v1/' + handle.slice(1);
-        m.parentNode.insertBefore(a, m);
-      })();
-
-     
-      
-
-      // search box
-      
-
       
     </script>
   </body>

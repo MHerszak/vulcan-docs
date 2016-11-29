@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>Architecture | Nova Docs</title>
+    <title>Custom Fields | Nova Docs</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="https://www.meteor.com/favicon.png" sizes="16x16 32x32 64x64">
@@ -12,12 +12,12 @@
     <!-- Social -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://nova-docs.telescopeapp.org">
-    <meta property="og:title" content="Architecture | Nova Docs">
+    <meta property="og:title" content="Custom Fields | Nova Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@telescopeapp">
-    <meta name="twitter:title" content="Architecture | Nova Docs">
+    <meta name="twitter:title" content="Custom Fields | Nova Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
@@ -122,8 +122,8 @@
               </li>
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
+              <li class="item-toc ">
+                <a href="architecture.html" class="sidebar-link ">
                   <span>Architecture</span>
                 </a>
               </li>
@@ -145,8 +145,8 @@
               </li>
             
               
-              <li class="item-toc ">
-                <a href="custom-fields.html" class="sidebar-link ">
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
                   <span>Custom Fields</span>
                 </a>
               </li>
@@ -240,76 +240,26 @@
 <div class="content">
   <div class="content-wrapper">
     <div class="header-content">
-      <h1 class="title-page">Architecture</h1>
+      <h1 class="title-page">Custom Fields</h1>
       
 
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/telescopejs/nova-docs/tree/master/source/architecture.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/telescopejs/nova-docs/tree/master/source/custom-fields.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
     </div>
 
     <div class="document-formatting">
-      <h2 id="Nova’s-Building-Blocks"><a href="#Nova’s-Building-Blocks" class="headerlink" title="Nova’s Building Blocks"></a>Nova’s Building Blocks</h2><p>Nova is built on top of three main open-source technologies: React, Apollo, and Meteor. </p>
-<ul>
-<li><a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> is Nova’s front-end library.</li>
-<li><a href="http://apollostack.com" target="_blank" rel="external">Apollo</a> is Nova’s <a href="http://graphql.org/" target="_blank" rel="external">GraphQL</a> API layer, used to load data from the server. </li>
-<li><a href="http://meteor.com" target="_blank" rel="external">Meteor</a> is Nova’s back-end layer, used to handle the database as well as server and bundle the app. </li>
-</ul>
-<p>Each layer is independent from the other two: you can take your React components and use them with a completely different stack, you can switch out Apollo for a different data layer, and – although we’re not quite there yet – ultimately we also hope to make it easy to migrate out of Meteor.</p>
-<p>The goal is to avoid getting stuck: if at any point you outgrow Nova, it should be possible to leave it with minimal refactoring. </p>
-<h2 id="Code-Architecture"><a href="#Code-Architecture" class="headerlink" title="Code Architecture"></a>Code Architecture</h2><p>In keeping with this idea of flexibility and modularity, Nova’s application structure is a bit different than most other Meteor apps. </p>
-<p>In Nova, each feature has its own distinct <strong>Meteor package</strong> which can be freely added or removed. For example, if your current theme doesn’t use comments, you can get rid of every comments-related back-end feature with:</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">meteor <span class="built_in">remove</span> nov<span class="variable">a:comments</span></span><br></pre></td></tr></table></figure>
-<p>Generally speaking, Nova packages fall in one of five categories, and they’re all listed in your <code>.meteor/packages</code> file.</p>
-<h3 id="Core-Packages"><a href="#Core-Packages" class="headerlink" title="Core Packages"></a>Core Packages</h3><p>These are the core packages that make the <a href="tutorial-framework.html">Nova framework</a>:</p>
-<ul>
-<li><code>nova:lib</code></li>
-<li><code>nova:core</code></li>
-<li><code>nova:forms</code></li>
-<li><code>nova:apollo</code></li>
-<li><code>nova:routing</code></li>
-<li><code>nova:email</code></li>
-<li><code>nova:users</code> </li>
-</ul>
-<p>Every Nova app will usually include them, but note that strictly speaking only <code>nova:core</code> (which itself depends on <code>nova:lib</code>) cannot be removed from Nova apps. </p>
-<h3 id="Feature-Packages"><a href="#Feature-Packages" class="headerlink" title="Feature Packages"></a>Feature Packages</h3><p>These includes all the main Nova features:</p>
-<ul>
-<li><code>nova:events</code></li>
-<li><code>nova:settings</code></li>
-<li><code>nova:posts</code></li>
-<li><code>nova:newsletter</code></li>
-<li><code>nova:search</code></li>
-<li><code>nova:notifications</code></li>
-<li><code>nova:getting-started</code></li>
-<li><code>nova:categories</code></li>
-<li><code>nova:voting</code></li>
-<li><code>nova:embedly</code></li>
-<li><code>nova:api</code></li>
-<li><code>nova:rss</code></li>
-<li><code>nova:subscribe</code></li>
-</ul>
-<p>These can all be added and removed, but note that they might have dependencies on each other (for example <code>nova:comments</code> depends on <code>nova:posts</code>).</p>
-<p>Any extra plug-in you install would also fall in this category.</p>
-<h3 id="Theme-Packages"><a href="#Theme-Packages" class="headerlink" title="Theme Packages"></a>Theme Packages</h3><p>These packages are the one that control what your app actually looks and feels like, and they’re the ones you’ll usually want to replace (or more likely, extend).</p>
-<ul>
-<li><code>nova:base-components</code></li>
-<li><code>nova:base-styles</code></li>
-<li><code>nova:email-templates</code></li>
-<li><code>nova:i18n-en-us</code></li>
-</ul>
-<p>Theme packages can include React components, CSS styles, email templates, or just language strings. </p>
-<h3 id="Meteor-Packages"><a href="#Meteor-Packages" class="headerlink" title="Meteor Packages"></a>Meteor Packages</h3><p>Sometimes you’ll also want to include either official or third-party Meteor packages to add extra features to your app. While this is usually done from within a package’s <code>package.js</code> file, you can also add packages directly in your <code>packages</code> file in some instances, such as for controlling user accounts:</p>
-<ul>
-<li><code>accounts-password</code></li>
-<li><code>accounts-twitter</code></li>
-</ul>
-<h3 id="Custom-Packages"><a href="#Custom-Packages" class="headerlink" title="Custom Packages"></a>Custom Packages</h3><p>Finally, any new package you create to extend Nova will fall in the “custom package” category. </p>
-<h2 id="Extend-Don’t-Edit"><a href="#Extend-Don’t-Edit" class="headerlink" title="Extend, Don’t Edit"></a>Extend, Don’t Edit</h2><p>Another key point of Nova’s philosophy is to never edit the core codebase (i.e. what you get from the Nova repo) directly if you can avoid it. </p>
-<p>Editing Nova’s code makes it harder to keep it up to date when things change in the main Nova repo, as your modifications might conflict with a new updated version. </p>
-<p>Instead, Nova includes many hooks and patterns that enable you to tweak and extend core features from your <em>own</em> packages without having to actually modify their code. </p>
+      <p>Out of the box, Nova has three main collections: <code>Posts</code>, <code>Users</code>, and <code>Comments</code>. Each of them has a pre-set schema, but that schema can also be extended with custom fields.</p>
+<p>For example, this is how the <code>nova:newsletter</code> package extends the <code>Posts</code> schema with a <code>scheduledAt</code> property that keeps track of when a post was sent out as part of an email newsletter:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Posts.addField(&#123;</span><br><span class="line">  <span class="attr">fieldName</span>: <span class="string">'scheduledAt'</span>,</span><br><span class="line">  <span class="attr">fieldSchema</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">Date</span>,</span><br><span class="line">    <span class="attr">optional</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>The <code>collection.addField()</code> function takes either a field object, or an array of fields. Each field has a <code>fieldName</code> property, and a <code>fieldSchema</code> property.</p>
+<p>Each field schema supports all of the <a href="https://github.com/aldeed/meteor-simple-schema#schema-rules" target="_blank" rel="external">SimpleSchema properties</a>, such as <code>type</code>, <code>optional</code>, etc.</p>
+<p>A few special properties (<code>insertableIf</code>, <code>editableIf</code>, <code>control</code>, and <code>order</code>) are also supported by the <a href="forms.html">Forms</a> package.</p>
+<p>You can also remove a field by calling <code>collection.removeField(fieldName)</code>. For example:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Posts.removeField(<span class="string">'scheduledAt'</span>);</span><br></pre></td></tr></table></figure>
 
     </div>
   </div>
@@ -319,17 +269,17 @@
       
       
         <a class="link primary prev"
-          href="features.html">
+          href="theming.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Features
+          Components & Theming
         </a>
       
       
         <a class="link primary next"
-          href="theming.html">
+          href="schema.html">
           <span class="subtitle-pagination">Next</span>
-          Components & Theming
+          Schema
           <span class="icon-arrow-right-alt"></span>
         </a>
       
@@ -337,7 +287,7 @@
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/telescopejs/nova-docs/tree/master/source/architecture.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/telescopejs/nova-docs/tree/master/source/custom-fields.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 

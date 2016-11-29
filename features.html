@@ -37,8 +37,8 @@
       </span>
     </div>
     <div class="nav-item">
-      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Docs"  >
-        <img src="" alt="Nova" class="logo"/><img src="" class="logo-subbrand" alt="Docs"/>
+      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation Nova Documentation"  >
+        Nova Documentation
       </a>
     </div>
   </div>
@@ -65,8 +65,8 @@
 <div class="sidebar">
   <div class="panel">
     <div class="panel-item">
-      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova"  >
-        <span>Nova Docs</span>
+      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation"  >
+        <span>Nova Documentation Nova Documentation</span>
       </a>
     </div>
     
@@ -105,6 +105,15 @@
                 </a>
               </li>
             
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Overview</div>
+          
+          <ul class="list-toc">
+            
               
               <li class="item-toc  current">
                 <a href="" class="sidebar-link  current">
@@ -116,6 +125,29 @@
               <li class="item-toc ">
                 <a href="architecture.html" class="sidebar-link ">
                   <span>Architecture</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">API</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="theming.html" class="sidebar-link ">
+                  <span>Components & Theming</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="custom-fields.html" class="sidebar-link ">
+                  <span>Custom Fields</span>
                 </a>
               </li>
             
@@ -151,13 +183,6 @@
               <li class="item-toc ">
                 <a href="email.html" class="sidebar-link ">
                   <span>Email</span>
-                </a>
-              </li>
-            
-              
-              <li class="item-toc ">
-                <a href="theming.html" class="sidebar-link ">
-                  <span>Theming</span>
                 </a>
               </li>
             
@@ -235,7 +260,6 @@
 <h2 id="automated-forms">Automated Forms</h2>
 
 <p>Nova will also use your schema to generate client-side forms and handle their submission via the appropriate Apollo mutation. </p>
-<p><img src="http://g.recordit.co/FcZuDIo8Rw.gif" alt="http://g.recordit.co/FcZuDIo8Rw.gif"></p>
 <p>For example, here’s how you would display a form to edit a single movie:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;NovaForm </span><br><span class="line">  collection=&#123;Movies&#125; </span><br><span class="line">  documentId=&#123;props.documentId&#125;</span><br><span class="line">  queryName=<span class="string">"moviesListQuery"</span></span><br><span class="line">  showRemove=&#123;<span class="literal">true</span>&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
 <p>The <code>queryName</code> option tells NovaForm which query should be automatically updated once the operation is done, while the <code>showRemove</code> option add a “Delete Movie” button to the form. </p>
@@ -310,38 +334,8 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
 
-    <!-- Feedbacklite widget -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  	<script type="text/javascript">
-    	var h = document.getElementsByTagName('head')[0];
-    	(function(){
-    	var fc = document.createElement('link'); fc.type = 'text/css'; fc.rel = 'stylesheet';
-    	fc.href = 'https://product.feedbacklite.com/feedbacklite.css'; h.appendChild(fc);
-    	})();
-    	var fbl = {'campaign':{'id':1875, 'type':2, 'size':1, 'body':'666666', 'position':7, 'tab':4, 'control':1, 'auto':1, 'auto_delay':20000, 'auto_expiry':1209600000}};
-    	(function(){
-    	var fj = document.createElement('script'); fj.type = 'text/javascript';
-    	fj.async = true; fj.src = 'https://product.feedbacklite.com/feedbacklite.js'; h.appendChild(fj);
-    	})();
-  	</script>
 
     <script>
-      // nectar ninja
-      (function(){
-        var handle = '@meteorjs';
-        var a = document.createElement('script');
-        var m = document.getElementsByTagName('script')[0];
-        a.async = 1;
-        a.src = 'https://nectar.ninja/api/v1/' + handle.slice(1);
-        m.parentNode.insertBefore(a, m);
-      })();
-
-     
-      
-
-      // search box
-      
-
       
     </script>
   </body>
