@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>Custom Fields | Nova Docs</title>
+    <title>Tutorials | Nova Docs</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="https://www.meteor.com/favicon.png" sizes="16x16 32x32 64x64">
@@ -12,12 +12,12 @@
     <!-- Social -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://nova-docs.telescopeapp.org">
-    <meta property="og:title" content="Custom Fields | Nova Docs">
+    <meta property="og:title" content="Tutorials | Nova Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@telescopeapp">
-    <meta name="twitter:title" content="Custom Fields | Nova Docs">
+    <meta name="twitter:title" content="Tutorials | Nova Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
@@ -168,13 +168,6 @@
               </li>
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
-                  <span>Custom Fields</span>
-                </a>
-              </li>
-            
-              
               <li class="item-toc ">
                 <a href="schema.html" class="sidebar-link ">
                   <span>Schema</span>
@@ -240,6 +233,43 @@
           </ul>
         </li>
       
+        <li>
+          
+            <div class="heading-toc">Resources</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="plugins.html" class="sidebar-link ">
+                  <span>Plugins</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="themes.html" class="sidebar-link ">
+                  <span>Themes</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
+                  <span>Tutorials</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="videos.html" class="sidebar-link ">
+                  <span>Videos</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
     </ul>
   </div>
 </div>
@@ -247,26 +277,19 @@
 <div class="content">
   <div class="content-wrapper">
     <div class="header-content">
-      <h1 class="title-page">Custom Fields</h1>
+      <h1 class="title-page">Tutorials</h1>
       
 
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/telescopejs/nova-docs/tree/master/source/custom-fields.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/telescopejs/nova-docs/tree/master/source/tutorials.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
     </div>
 
     <div class="document-formatting">
-      <p>Out of the box, Nova has three main collections: <code>Posts</code>, <code>Users</code>, and <code>Comments</code>. Each of them has a pre-set schema, but that schema can also be extended with custom fields.</p>
-<p>For example, this is how the <code>nova:newsletter</code> package extends the <code>Posts</code> schema with a <code>scheduledAt</code> property that keeps track of when a post was sent out as part of an email newsletter:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Posts.addField(&#123;</span><br><span class="line">  <span class="attr">fieldName</span>: <span class="string">'scheduledAt'</span>,</span><br><span class="line">  <span class="attr">fieldSchema</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">Date</span>,</span><br><span class="line">    <span class="attr">optional</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>The <code>collection.addField()</code> function takes either a field object, or an array of fields. Each field has a <code>fieldName</code> property, and a <code>fieldSchema</code> property.</p>
-<p>Each field schema supports all of the <a href="https://github.com/aldeed/meteor-simple-schema#schema-rules" target="_blank" rel="external">SimpleSchema properties</a>, such as <code>type</code>, <code>optional</code>, etc.</p>
-<p>A few special properties (<code>insertableIf</code>, <code>editableIf</code>, <code>control</code>, and <code>order</code>) are also supported by the <a href="forms.html">Forms</a> package.</p>
-<p>You can also remove a field by calling <code>collection.removeField(fieldName)</code>. For example:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Posts.removeField(<span class="string">'scheduledAt'</span>);</span><br></pre></td></tr></table></figure>
+      <p>Coming soon…</p>
 
     </div>
   </div>
@@ -276,17 +299,17 @@
       
       
         <a class="link primary prev"
-          href="theming.html">
+          href="themes.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Components & Theming
+          Themes
         </a>
       
       
         <a class="link primary next"
-          href="schema.html">
+          href="videos.html">
           <span class="subtitle-pagination">Next</span>
-          Schema
+          Videos
           <span class="icon-arrow-right-alt"></span>
         </a>
       
@@ -294,7 +317,7 @@
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/telescopejs/nova-docs/tree/master/source/custom-fields.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/telescopejs/nova-docs/tree/master/source/tutorials.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 
