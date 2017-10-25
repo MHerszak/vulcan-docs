@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>Videos | Vulcan Docs</title>
+    <title>Upload Package | Vulcan Docs</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="images/favicon.ico" sizes="16x16 32x32 64x64">
@@ -12,12 +12,12 @@
     <!-- Social -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://docs.vulcanjs.org">
-    <meta property="og:title" content="Videos | Vulcan Docs">
+    <meta property="og:title" content="Upload Package | Vulcan Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@telescopeapp">
-    <meta name="twitter:title" content="Videos | Vulcan Docs">
+    <meta name="twitter:title" content="Upload Package | Vulcan Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
@@ -307,8 +307,8 @@
               </li>
             
               
-              <li class="item-toc ">
-                <a href="forms-upload.html" class="sidebar-link ">
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
                   <span>Upload Package</span>
                 </a>
               </li>
@@ -495,8 +495,8 @@
               </li>
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
+              <li class="item-toc ">
+                <a href="videos.html" class="sidebar-link ">
                   <span>Videos</span>
                 </a>
               </li>
@@ -511,21 +511,39 @@
 <div class="content">
   <div class="content-wrapper">
     <div class="header-content">
-      <h1 class="title-page">Videos</h1>
+      <h1 class="title-page">Upload Package</h1>
       
 
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/vulcanjs/nova-docs/tree/master/source/videos.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/vulcanjs/nova-docs/tree/master/source/forms-upload.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
     </div>
 
     <div class="document-formatting">
-      <ul>
-<li><a href="https://www.youtube.com/channel/UCGIvQQ6zw7ov2cHgD70HFlA" target="_blank" rel="external">Vulcan on YouTube</a>.</li>
-</ul>
+      <p>This is a Vulcan package extending <code>vulcan:forms</code> to support form components for uploading one or more images. </p>
+<p><img src="https://res.cloudinary.com/xavcz/image/upload/v1471534203/Capture_d_e%CC%81cran_2016-08-17_14.22.14_ehwv0d.png" alt="Screenshot"></p>
+<p>Note: although this package only supports Cloudinary currently, PRs to support additional providers (S3, etc.) are warmly encouraged. </p>
+<h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><p>This package depends on the awesome <code>react-dropzone</code> (<a href="https://github.com/okonet/react-dropzone" target="_blank" rel="external">repo</a>), you need to install the dependency:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> react-dropzone isomorphic-<span class="keyword">fetch</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="With-Cloudinary"><a href="#With-Cloudinary" class="headerlink" title="With Cloudinary"></a>With Cloudinary</h2><h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>Create a <a href="https://cloudinary.com" target="_blank" rel="external">Cloudinary account</a> if you don’t have one.</p>
+<p>The upload to Cloudinary relies on <strong>unsigned upload</strong>:</p>
+<blockquote>
+<p>Unsigned upload is an option for performing upload directly from a browser or mobile application with no authentication signature, and without going through your servers at all. However, for security reasons, not all upload parameters can be specified directly when performing unsigned upload calls.</p>
+</blockquote>
+<p>Unsigned upload options are controlled by <a href="http://cloudinary.com/documentation/upload_images#upload_presets" target="_blank" rel="external">an upload preset</a>, so in order to use this feature you first need to enable unsigned uploading for your Cloudinary account from the <a href="https://cloudinary.com/console/settings/upload" target="_blank" rel="external">Upload Settings</a> page.</p>
+<p>When creating your <strong>preset</strong>, you can define image transformations. I recommend to set something like 200px width &amp; height, fill mode and auto quality. Once created, you will get a preset id.</p>
+<p>It may look like this:</p>
+<p><img src="https://res.cloudinary.com/xavcz/image/upload/v1471534183/Capture_d_e%CC%81cran_2016-08-18_17.07.52_tr9uoh.png" alt="Screenshot-Cloudinary"></p>
+<p>Make sure that your <strong>preset</strong> is named the same between Cloudinary and the one you define in the schema. Otherwise, the upload will request will fail. </p>
+<h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><p>Edit your <code>settings.json</code> and add inside the <code>public: { ... }</code> block the following entries with your own credentials:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"public": &#123;</span><br><span class="line">  "cloudinary": &#123;</span><br><span class="line">    "cloudName": "YOUR_APP_NAME",</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Specifying-a-Preset"><a href="#Specifying-a-Preset" class="headerlink" title="Specifying a Preset"></a>Specifying a Preset</h3><p>If you’d like to specify a Cloudinary preset to be used to resize, convert, etc. your images, you can do so in the properties of the <strong>form field</strong>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">photos: &#123;</span><br><span class="line">  <span class="attr">label</span>: <span class="string">'Photos'</span>,</span><br><span class="line">  <span class="attr">type</span>: <span class="built_in">Array</span>,</span><br><span class="line">  <span class="attr">optional</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">viewableBy</span>: [<span class="string">'guests'</span>],</span><br><span class="line">  <span class="attr">insertableBy</span>: [<span class="string">'members'</span>],</span><br><span class="line">  <span class="attr">editableBy</span>: [<span class="string">'members'</span>],</span><br><span class="line">  <span class="attr">control</span>: FormsUpload, <span class="comment">// use the FormsUpload form component</span></span><br><span class="line">  form: &#123;</span><br><span class="line">    <span class="attr">options</span>: &#123;</span><br><span class="line">      <span class="attr">preset</span>: <span class="string">'myCloudinaryPreset'</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="Adding-images-to-Posts-as-an-example"><a href="#Adding-images-to-Posts-as-an-example" class="headerlink" title="Adding images to Posts (as an example)"></a>Adding images to Posts (as an example)</h3><p>If you want to add images to a certain collection. Add the custom field, make sure to add this in your fragments.js file:</p>
+<figure class="highlight plain"><figcaption><span>`</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   image</span><br><span class="line"> `);</span><br><span class="line"></span><br><span class="line">extendFragment(&apos;PostsPage&apos;, `</span><br><span class="line">   image</span><br><span class="line"> `);</span><br></pre></td></tr></table></figure>
+<p> You can now use the uploaded image anywhere in your Vulcan app, using this:<br><code>&lt;img src={post.image} /&gt;</code><br>which will look for the image field from your post.</p>
 
     </div>
   </div>
@@ -535,18 +553,25 @@
       
       
         <a class="link primary prev"
-          href="tutorials.html">
+          href="forms-custom.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Tutorials
+          Custom Form Components
         </a>
       
+      
+        <a class="link primary next"
+          href="email.html">
+          <span class="subtitle-pagination">Next</span>
+          Email
+          <span class="icon-arrow-right-alt"></span>
+        </a>
       
     </div>
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/vulcanjs/nova-docs/tree/master/source/videos.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/vulcanjs/nova-docs/tree/master/source/forms-upload.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>Videos | Vulcan Docs</title>
+    <title>Cloudinary | Vulcan Docs</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="images/favicon.ico" sizes="16x16 32x32 64x64">
@@ -12,12 +12,12 @@
     <!-- Social -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://docs.vulcanjs.org">
-    <meta property="og:title" content="Videos | Vulcan Docs">
+    <meta property="og:title" content="Cloudinary | Vulcan Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@telescopeapp">
-    <meta name="twitter:title" content="Videos | Vulcan Docs">
+    <meta name="twitter:title" content="Cloudinary | Vulcan Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
@@ -358,8 +358,8 @@
               </li>
             
               
-              <li class="item-toc ">
-                <a href="cloudinary.html" class="sidebar-link ">
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
                   <span>Cloudinary</span>
                 </a>
               </li>
@@ -495,8 +495,8 @@
               </li>
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
+              <li class="item-toc ">
+                <a href="videos.html" class="sidebar-link ">
                   <span>Videos</span>
                 </a>
               </li>
@@ -511,21 +511,31 @@
 <div class="content">
   <div class="content-wrapper">
     <div class="header-content">
-      <h1 class="title-page">Videos</h1>
+      <h1 class="title-page">Cloudinary</h1>
       
 
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/vulcanjs/nova-docs/tree/master/source/videos.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/vulcanjs/nova-docs/tree/master/source/cloudinary.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
     </div>
 
     <div class="document-formatting">
-      <ul>
-<li><a href="https://www.youtube.com/channel/UCGIvQQ6zw7ov2cHgD70HFlA" target="_blank" rel="external">Vulcan on YouTube</a>.</li>
-</ul>
+      <p>This package is used to <strong>cache</strong> a image already hosted online using <a href="http://cloudinary.com" target="_blank" rel="external">Cloudinary</a>. To <em>upload</em> a local image using Cloudinary check out the <a href="/forms-upload.html">Forms Upload</a> package instead. </p>
+<h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2><p>In your <strong>private</strong> settings:</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'cloudinary'</span>: &#123;</span><br><span class="line">  <span class="string">'apiKey'</span>: <span class="string">'123foo'</span>,</span><br><span class="line">  <span class="string">'apiSecret'</span>: <span class="string">'456bar'</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h2 id="makeCloudinary"><a href="#makeCloudinary" class="headerlink" title="makeCloudinary"></a>makeCloudinary</h2><p>You can enable Cloudinary caching on a collection using the <code>makeCloudinary</code> function:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Posts &#125; <span class="keyword">from</span> <span class="string">'meteor/example-forum'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; makeCloudinary &#125; <span class="keyword">from</span> <span class="string">'meteor/vulcan:cloudinary'</span>;</span><br><span class="line"></span><br><span class="line">makeCloudinary(&#123;<span class="attr">collection</span>: Posts, <span class="attr">fieldName</span>: <span class="string">'thumbnailUrl'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>The <code>collection</code> option indicates which collection you want to use Cloudinary with, while the <code>fieldName</code> option indicates which field you want to cache (which should contain an image URL). </p>
+<p>Note that at this time, you can only cache a single image field per collection. </p>
+<h2 id="Custom-Fields"><a href="#Custom-Fields" class="headerlink" title="Custom Fields"></a>Custom Fields</h2><p><code>makeCloudinary</code> will add the following custom fields to store image data:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">fieldName</span>: <span class="string">'cloudinaryId'</span>,</span><br><span class="line">    <span class="attr">fieldSchema</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">      <span class="attr">optional</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">viewableBy</span>: [<span class="string">'guests'</span>],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">fieldName</span>: <span class="string">'cloudinaryUrls'</span>,</span><br><span class="line">    <span class="attr">fieldSchema</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Array</span>,</span><br><span class="line">      <span class="attr">optional</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">viewableBy</span>: [<span class="string">'guests'</span>],</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">fieldName</span>: <span class="string">'cloudinaryUrls.$'</span>,</span><br><span class="line">    <span class="attr">fieldSchema</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Object</span>,</span><br><span class="line">      <span class="attr">blackbox</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="attr">optional</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>In addition, the <code>cloudinaryUrl</code> GraphQL-only field is also available as a shortcut to get a specific image format’s URL. </p>
+<p>It optionally takes a <code>format</code> argument when used inside a GraphQL query or fragment, for example:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">cloudinaryUrl</span><span class="params">(format: <span class="string">"small"</span>)</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="Callbacks"><a href="#Callbacks" class="headerlink" title="Callbacks"></a>Callbacks</h2><p><code>makeCloudinary</code> will also add two callbacks on <code>collection.new.sync</code> and <code>collection.edit.sync</code> to cache your images. </p>
 
     </div>
   </div>
@@ -535,18 +545,25 @@
       
       
         <a class="link primary prev"
-          href="tutorials.html">
+          href="embed.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Tutorials
+          Embed
         </a>
       
+      
+        <a class="link primary next"
+          href="voting.html">
+          <span class="subtitle-pagination">Next</span>
+          Voting
+          <span class="icon-arrow-right-alt"></span>
+        </a>
       
     </div>
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/vulcanjs/nova-docs/tree/master/source/videos.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/vulcanjs/nova-docs/tree/master/source/cloudinary.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 

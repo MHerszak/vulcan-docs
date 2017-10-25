@@ -4,20 +4,20 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>Settings | Nova Docs</title>
+    <title>Settings | Vulcan Docs</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="https://www.meteor.com/favicon.png" sizes="16x16 32x32 64x64">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico" sizes="16x16 32x32 64x64">
 
     <!-- Social -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://nova-docs.telescopeapp.org">
-    <meta property="og:title" content="Settings | Nova Docs">
+    <meta property="og:url" content="http://docs.vulcanjs.org">
+    <meta property="og:title" content="Settings | Vulcan Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@telescopeapp">
-    <meta name="twitter:title" content="Settings | Nova Docs">
+    <meta name="twitter:title" content="Settings | Vulcan Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
@@ -25,6 +25,10 @@
     <meta name="google-site-verification" content="" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,300italic,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/style/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+
+
   </head>
   <body class="">
     
@@ -37,17 +41,27 @@
       </span>
     </div>
     <div class="nav-item">
-      <a class="logo-wrapper" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation Nova Documentation"  >
-        Nova Documentation
+      <a class="logo-wrapper" href="http://docs.vulcanjs.org/" title="Vulcan Documentation Vulcan Documentation"  >
+        <img src="/images/vulcan-logo-border-2.svg" alt="Vulcan Documentation" class="logo"/>
+        <span>Vulcan Documentation</span>
       </a>
     </div>
   </div>
 
   <div class="nav-group right">
+
+    <div class="nav-item wrapper-search">
+      <div class="input-symbol small round">
+        <input type="text" placeholder="Search Vulcan Docs" id="desktop-search-input" />
+        <span class="icon-search"></span>
+      </div>
+      <div class="wrapper-desktop-search-results"></div>
+    </div>
+
     
       
       <div class="nav-item show-desktop false ">
-        <a class="link" href="https://github.com/telescopejs/telescope"  >
+        <a class="link" href="https://github.com/vulcanjs/vulcan"  >
           <span>GitHub</span>
         </a>
       </div>
@@ -65,13 +79,13 @@
 <div class="sidebar">
   <div class="panel">
     <div class="panel-item">
-      <a class="" href="http://nova-docs.telescopeapp.org/" title="Nova Documentation"  >
-        <span>Nova Documentation Nova Documentation</span>
+      <a class="" href="http://docs.vulcanjs.org/" title="Vulcan Documentation"  >
+        <span>Vulcan Documentation Vulcan Documentation</span>
       </a>
     </div>
     
       <div class="panel-item "">
-        <a class="" href="https://github.com/telescopejs/telescope"  >
+        <a class="" href="https://github.com/vulcanjs/vulcan"  >
           <span>GitHub</span>
         </a>
       </div>
@@ -86,11 +100,8 @@
 
   <div class="sidebar-content">
     <div class="topcap">
-      <span class="title-sidebar">Nova Docs</span>
       
     </div>
-
-    
 
     <ul class="toc">
       
@@ -128,26 +139,75 @@
                 </a>
               </li>
             
-          </ul>
-        </li>
-      
-        <li>
-          
-            <div class="heading-toc">Tutorials</div>
-          
-          <ul class="list-toc">
-            
               
               <li class="item-toc ">
-                <a href="tutorial-customizing.html" class="sidebar-link ">
-                  <span>Customizing & Extending Nova</span>
+                <a href="vulcan.html" class="sidebar-link ">
+                  <span>From Telescope to Vulcan</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="tutorial-framework.html" class="sidebar-link ">
-                  <span>Understanding the Nova Framework</span>
+                <a href="packages.html" class="sidebar-link ">
+                  <span>Packages</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="common-problems.html" class="sidebar-link ">
+                  <span>Common Problems</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Data Layer</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="schemas.html" class="sidebar-link ">
+                  <span>Collections & Schemas</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="data-loading.html" class="sidebar-link ">
+                  <span>Data Loading</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="fragments.html" class="sidebar-link ">
+                  <span>Fragments</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="terms-parameters.html" class="sidebar-link ">
+                  <span>Terms & Parameters</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="mutations.html" class="sidebar-link ">
+                  <span>Mutations</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="redux.html" class="sidebar-link ">
+                  <span>Using Redux</span>
                 </a>
               </li>
             
@@ -169,22 +229,8 @@
             
               
               <li class="item-toc ">
-                <a href="schema.html" class="sidebar-link ">
-                  <span>Schema</span>
-                </a>
-              </li>
-            
-              
-              <li class="item-toc ">
-                <a href="data-layer.html" class="sidebar-link ">
-                  <span>Data Layer</span>
-                </a>
-              </li>
-            
-              
-              <li class="item-toc ">
-                <a href="forms.html" class="sidebar-link ">
-                  <span>Forms</span>
+                <a href="core-components.html" class="sidebar-link ">
+                  <span>Core Components</span>
                 </a>
               </li>
             
@@ -197,8 +243,8 @@
             
               
               <li class="item-toc ">
-                <a href="email.html" class="sidebar-link ">
-                  <span>Email</span>
+                <a href="users.html" class="sidebar-link ">
+                  <span>Users</span>
                 </a>
               </li>
             
@@ -224,6 +270,13 @@
               </li>
             
               
+              <li class="item-toc ">
+                <a href="head-tags.html" class="sidebar-link ">
+                  <span>Head Tags</span>
+                </a>
+              </li>
+            
+              
               <li class="item-toc  current">
                 <a href="" class="sidebar-link  current">
                   <span>Settings</span>
@@ -235,9 +288,183 @@
       
         <li>
           
+            <div class="heading-toc">Forms</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="forms.html" class="sidebar-link ">
+                  <span>Forms</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="forms-custom.html" class="sidebar-link ">
+                  <span>Custom Form Components</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="forms-upload.html" class="sidebar-link ">
+                  <span>Upload Package</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Packages</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="email.html" class="sidebar-link ">
+                  <span>Email</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="newsletter.html" class="sidebar-link ">
+                  <span>Newsletter</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="payments.html" class="sidebar-link ">
+                  <span>Payments</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="admin.html" class="sidebar-link ">
+                  <span>Admin Dashboard</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="embed.html" class="sidebar-link ">
+                  <span>Embed</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="cloudinary.html" class="sidebar-link ">
+                  <span>Cloudinary</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="voting.html" class="sidebar-link ">
+                  <span>Voting</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Tutorials</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="example-simple.html" class="sidebar-link ">
+                  <span>Simple Example</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="example-movies.html" class="sidebar-link ">
+                  <span>Movies Example</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="example-instagram.html" class="sidebar-link ">
+                  <span>Instagram Example</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="example-forum.html" class="sidebar-link ">
+                  <span>Forum Example</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="example-customization.html" class="sidebar-link ">
+                  <span>Customization Example</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="example-permissions.html" class="sidebar-link ">
+                  <span>Permissions Example</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="sponsorship-tutorial.html" class="sidebar-link ">
+                  <span>Sponsorship Flow Tutorial</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="deployment.html" class="sidebar-link ">
+                  <span>Deployment Guide</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="migration.html" class="sidebar-link ">
+                  <span>Migration Guide</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="recipes.html" class="sidebar-link ">
+                  <span>Recipes</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
             <div class="heading-toc">Resources</div>
           
           <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="learn.html" class="sidebar-link ">
+                  <span>Learn More</span>
+                </a>
+              </li>
             
               
               <li class="item-toc ">
@@ -289,7 +516,7 @@
 
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/telescopejs/nova-docs/tree/master/source/settings.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/vulcanjs/nova-docs/tree/master/source/settings.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
@@ -297,8 +524,9 @@
 
     <div class="document-formatting">
       <p>You can configure the following settings in your <code>settings.json</code> file.</p>
-<h2 id="Public-Settings"><a href="#Public-Settings" class="headerlink" title="Public Settings"></a>Public Settings</h2><p>These settings are defined on the <code>public</code> property, meaning they will be shared with the client. </p>
-<h3 id="Global-Settings"><a href="#Global-Settings" class="headerlink" title="Global Settings"></a>Global Settings</h3><table>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>You can call Vulcan.showSettings() in your meteor shell to get a quick overview of all settings, or go to <code>/settings</code> if you have the <code>vulcan:debug</code> package enabled. </p>
+<h3 id="Public-Settings"><a href="#Public-Settings" class="headerlink" title="Public Settings"></a>Public Settings</h3><p>These settings are defined on the <code>public</code> property, meaning they will be shared with the client. </p>
+<h4 id="Global-Settings"><a href="#Global-Settings" class="headerlink" title="Global Settings"></a>Global Settings</h4><table>
 <thead>
 <tr>
 <th>Setting</th>
@@ -309,7 +537,7 @@
 <tbody>
 <tr>
 <td>title</td>
-<td>“My Nova Site”</td>
+<td>“My Vulcan Site”</td>
 <td>Your site’s title</td>
 </tr>
 <tr>
@@ -329,63 +557,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Content-Settings"><a href="#Content-Settings" class="headerlink" title="Content Settings"></a>Content Settings</h3><table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>enableNotifications</td>
-<td>true</td>
-<td>Whether to enable email notifications</td>
-</tr>
-<tr>
-<td>postInterval</td>
-<td>20</td>
-<td>How long, in seconds, to make users wait between submitting posts</td>
-</tr>
-<tr>
-<td>commentInterval</td>
-<td>20</td>
-<td>How long, in seconds, to make users wait between commenting</td>
-</tr>
-<tr>
-<td>maxPostsPerDay</td>
-<td>10</td>
-<td>How many posts a user can submit per day</td>
-</tr>
-<tr>
-<td>RSSLinksPointTo</td>
-<td>“link”/“page”</td>
-<td>Whether to point RSS links to the linked site or back to your own site</td>
-</tr>
-<tr>
-<td>postsPerPage</td>
-<td>10</td>
-<td>How many posts to display per page</td>
-</tr>
-<tr>
-<td>thumbnailWidth</td>
-<td>800</td>
-<td>Posts thumbnails width</td>
-</tr>
-<tr>
-<td>thumbnailHeight</td>
-<td>600</td>
-<td>Posts thumbnails height</td>
-</tr>
-<tr>
-<td>scoreUpdateInterval</td>
-<td>30</td>
-<td>How often, in seconds, to update posts scores. Set to <code>0</code> to disable score updating</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Social-Settings"><a href="#Social-Settings" class="headerlink" title="Social Settings"></a>Social Settings</h3><table>
+<h4 id="Social-Settings"><a href="#Social-Settings" class="headerlink" title="Social Settings"></a>Social Settings</h4><table>
 <thead>
 <tr>
 <th>Setting</th>
@@ -411,44 +583,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Newsletter-Settings"><a href="#Newsletter-Settings" class="headerlink" title="Newsletter Settings"></a>Newsletter Settings</h3><table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>enableNewsletter</td>
-<td>false</td>
-<td>Enable the automated newsletter</td>
-</tr>
-<tr>
-<td>enableNewsletterInDev</td>
-<td>false</td>
-<td>Enable the automated newsletter while in development mode</td>
-</tr>
-<tr>
-<td>newsletterFrequency</td>
-<td>[1,2,3,4,5,6,7]</td>
-<td>The days on which to send the newsletter (1 = Monday, 2 = Tuesday, etc.)</td>
-</tr>
-<tr>
-<td>newsletterTime</td>
-<td>“07:55”</td>
-<td>When to send out the newsletter</td>
-</tr>
-<tr>
-<td>autoSubscribe</td>
-<td>false</td>
-<td>Whether new users should be automatically subscribed to the newsletter</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Server-Settings"><a href="#Server-Settings" class="headerlink" title="Server Settings"></a>Server Settings</h2><p>These settings are defined on the <code>private</code> property, and kept on the server.</p>
-<h3 id="Global-Settings-1"><a href="#Global-Settings-1" class="headerlink" title="Global Settings"></a>Global Settings</h3><table>
+<h3 id="Server-Settings"><a href="#Server-Settings" class="headerlink" title="Server Settings"></a>Server Settings</h3><p>These settings are defined on the <code>private</code> property, and kept on the server.</p>
+<h4 id="Global-Settings-1"><a href="#Global-Settings-1" class="headerlink" title="Global Settings"></a>Global Settings</h4><table>
 <thead>
 <tr>
 <th>Setting</th>
@@ -464,10 +600,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="OAuth-Settings"><a href="#OAuth-Settings" class="headerlink" title="OAuth Settings"></a>OAuth Settings</h3><p>You can use the settings file to store your oAuth configurations:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"oAuth"</span>: &#123;</span><br><span class="line">  <span class="string">"twitter"</span>: &#123;</span><br><span class="line">    <span class="string">"consumerKey"</span>: <span class="string">"foo"</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"bar"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"facebook"</span>: &#123;</span><br><span class="line">    <span class="string">"clientId"</span>: <span class="string">"foo"</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"bar"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h3><p>If you define categories in your settings file, they will be automatically imported into your database at app launch:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"categories"</span>: [</span><br><span class="line">  &#123;<span class="string">"name"</span>: <span class="string">"Android"</span>&#125;,</span><br><span class="line">  &#123;<span class="string">"name"</span>: <span class="string">"iOS"</span>&#125;,</span><br><span class="line">  &#123;<span class="string">"name"</span>: <span class="string">"Mac"</span>&#125;,</span><br><span class="line">  &#123;<span class="string">"name"</span>: <span class="string">"PC"</span>&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="OAuth-Settings"><a href="#OAuth-Settings" class="headerlink" title="OAuth Settings"></a>OAuth Settings</h4><p>You can use the settings file to store your oAuth configurations:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"oAuth"</span>: &#123;</span><br><span class="line">  <span class="string">"twitter"</span>: &#123;</span><br><span class="line">    <span class="string">"consumerKey"</span>: <span class="string">"foo"</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"bar"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"facebook"</span>: &#123;</span><br><span class="line">    <span class="string">"appId"</span>: <span class="string">"foo"</span>,</span><br><span class="line">    <span class="string">"secret"</span>: <span class="string">"bar"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="registerSetting"><a href="#registerSetting" class="headerlink" title="registerSetting"></a>registerSetting</h2><p>You can optionally register a new setting with <code>registerSetting(name, defaultValue, description)</code>. This is optional, but it will let your setting be displayed on the <code>/settings</code> route and when calling <code>Vulcan.showSettings()</code>. </p>
+<p>Note that <code>registerSetting</code> also both works with nested settings objects (e.g. <code>registerSetting(&#39;newsletter.frequency&#39;, [1,3,5], &#39;Newsletter frequency&#39;)</code>).</p>
+<h2 id="getSetting"><a href="#getSetting" class="headerlink" title="getSetting"></a>getSetting</h2><p>To retrieve a setting, just call <code>getSetting(settingName)</code>. If no setting has been assigned in <code>settings.json</code>, the default value assigned through <code>registerSetting</code> will be used (if it exists).</p>
+<p>Just like <code>registerSetting</code>, <code>getSetting</code> also works with nested settings objects (e.g. <code>getSetting(&#39;newsletter.frequency&#39;)</code>).</p>
 
     </div>
   </div>
@@ -477,17 +615,17 @@
       
       
         <a class="link primary prev"
-          href="internationalization.html">
+          href="head-tags.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Internationalization
+          Head Tags
         </a>
       
       
         <a class="link primary next"
-          href="examples.html">
+          href="forms.html">
           <span class="subtitle-pagination">Next</span>
-          Examples
+          Forms
           <span class="icon-arrow-right-alt"></span>
         </a>
       
@@ -495,7 +633,7 @@
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/telescopejs/nova-docs/tree/master/source/settings.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/vulcanjs/nova-docs/tree/master/source/settings.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 
@@ -504,12 +642,21 @@
 
     <script src="/script/smooth-scroll.min.js"></script>
     <script src="/script/main.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
 
 
     <script>
       
     </script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+    <script type="text/javascript"> docsearch({
+      apiKey: 'ab091fbd89cda3abd54a35c4441b3e9b',
+      indexName: 'vulcanjs',
+      inputSelector: '#desktop-search-input',
+      debug: true // Set debug to true if you want to inspect the dropdown
+    });
+    </script>
+
   </body>
 </html>

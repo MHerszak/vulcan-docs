@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>Videos | Vulcan Docs</title>
+    <title>From Telescope to Vulcan | Vulcan Docs</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="images/favicon.ico" sizes="16x16 32x32 64x64">
@@ -12,12 +12,12 @@
     <!-- Social -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://docs.vulcanjs.org">
-    <meta property="og:title" content="Videos | Vulcan Docs">
+    <meta property="og:title" content="From Telescope to Vulcan | Vulcan Docs">
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@telescopeapp">
-    <meta name="twitter:title" content="Videos | Vulcan Docs">
+    <meta name="twitter:title" content="From Telescope to Vulcan | Vulcan Docs">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
@@ -140,8 +140,8 @@
               </li>
             
               
-              <li class="item-toc ">
-                <a href="vulcan.html" class="sidebar-link ">
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
                   <span>From Telescope to Vulcan</span>
                 </a>
               </li>
@@ -495,8 +495,8 @@
               </li>
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
+              <li class="item-toc ">
+                <a href="videos.html" class="sidebar-link ">
                   <span>Videos</span>
                 </a>
               </li>
@@ -511,21 +511,31 @@
 <div class="content">
   <div class="content-wrapper">
     <div class="header-content">
-      <h1 class="title-page">Videos</h1>
+      <h1 class="title-page">From Telescope to Vulcan</h1>
       
 
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/vulcanjs/nova-docs/tree/master/source/videos.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/vulcanjs/nova-docs/tree/master/source/vulcan.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
     </div>
 
     <div class="document-formatting">
-      <ul>
-<li><a href="https://www.youtube.com/channel/UCGIvQQ6zw7ov2cHgD70HFlA" target="_blank" rel="external">Vulcan on YouTube</a>.</li>
-</ul>
+      <p><strong>Vulcan</strong> is the name of the next big evolution of the Telescope project. </p>
+<p>Over the years, we’ve realized that Telescope could be used to do a lot more than simply build Product Hunt clones. That’s why we’ve decided to focus our energy on building a more flexible and more generic platform, and we thought this new approach deserved a new name. </p>
+<p>In the near future, this will mean two big changes for Telescope:</p>
+<p>First, all various assets (repo/documentation/homepage/etc.) will progressively transition to the new VulcanJS name and branding. This might be a bit confusing at first, but we’ll get there eventually!</p>
+<p>Second, Vulcan will adopt a new “framework-first” approach. Practically speaking, this means you’ll start new projects with the <code>framework-demo</code> package, and not with the optional <code>vulcan:posts</code>, <code>vulcan:comments</code>, etc. feature packages. Of course, these packages will still be available if you choose to use them. We just think it’s important for new users to understand how the underlying framework works before they start using its more advanced capabilities.</p>
+<h3 id="Telescope-Nova-amp-Vulcan"><a href="#Telescope-Nova-amp-Vulcan" class="headerlink" title="Telescope, Nova, &amp; Vulcan"></a>Telescope, Nova, &amp; Vulcan</h3><p>Just to clear things up, here’s a short timeline of Telescope’s various versions:</p>
+<h4 id="Telescope-Legacy-2012-2016"><a href="#Telescope-Legacy-2012-2016" class="headerlink" title="Telescope Legacy (2012-2016)"></a>Telescope Legacy (2012-2016)</h4><p>The original Telescope, built with Meteor and Blaze. Focused on being usable out of the box as a Product Hunt/Hacker News clone. </p>
+<h4 id="Telescope-Nova-2016-2017"><a href="#Telescope-Nova-2016-2017" class="headerlink" title="Telescope Nova (2016-2017)"></a>Telescope Nova (2016-2017)</h4><p>The Meteor/React refactor of Telescope. Contained fewer features than Legacy, and was focused mainly on extensibility and flexibility. Nova originally used the Meteor pub/sub data layer (“Nova Classic”).</p>
+<p>Later in 2016, Nova was ported to the Apollo data layer while still using Meteor (“Nova Apollo”), and all internal APIs were refactored to eliminate global variables. </p>
+<h4 id="Vulcan-2017"><a href="#Vulcan-2017" class="headerlink" title="Vulcan (2017-???)"></a>Vulcan (2017-???)</h4><p>The new name for the Apollo version of Telescope Nova. </p>
+<p>As of March 2017, Vulcan is merely a rebranding of Telescope Nova 1.2, and does not feature any code changes.</p>
+<h3 id="Why-“Vulcan”"><a href="#Why-“Vulcan”" class="headerlink" title="Why “Vulcan”?"></a>Why “Vulcan”?</h3><p><a href="https://en.wikipedia.org/wiki/Vulcan_(mythology" target="_blank" rel="external">Vulcan</a> is the Roman god of fire and volcanoes. Since Vulcan uses React and Apollo, we thought this was an appropriate name. After all Apollo is a Roman god too, and the React team has used <a href="https://facebook.github.io/react/blog/2016/09/28/our-first-50000-stars.html" target="_blank" rel="external">volcanoes</a> in their imagery before. </p>
+<p>Also, the logo has a hidden reference to Telescope’s original space-themed roots. Can you find it?</p>
 
     </div>
   </div>
@@ -535,18 +545,25 @@
       
       
         <a class="link primary prev"
-          href="tutorials.html">
+          href="architecture.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Tutorials
+          Architecture
         </a>
       
+      
+        <a class="link primary next"
+          href="packages.html">
+          <span class="subtitle-pagination">Next</span>
+          Packages
+          <span class="icon-arrow-right-alt"></span>
+        </a>
       
     </div>
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/vulcanjs/nova-docs/tree/master/source/videos.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/vulcanjs/nova-docs/tree/master/source/vulcan.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 
